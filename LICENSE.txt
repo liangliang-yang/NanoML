@@ -1,0 +1,5 @@
+MIT License
+
+Copyright 2019 Liangliang Yang
+
+All Rights Reserved
