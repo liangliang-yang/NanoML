@@ -1,0 +1,13 @@
+name: nanoml
+dependencies:
+  - python=3.8
+  - pyyaml
+  - pytest-cov
+  - pip:
+    - numpy
+    - pandas
+    - xgboost
+    - scikit-learn
+    - pytest
+    - shap
+    - scipy
