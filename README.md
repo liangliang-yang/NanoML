@@ -4,4 +4,16 @@
 Machine Learning Web Platform
 
 
+## Install the conda env
+Run the below command
+```
+Source setup/setup.sh
+```
+
+In Order to use the package, run
+``` 
+pip install -e .
+```
+
+
 
