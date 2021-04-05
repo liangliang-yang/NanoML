@@ -10,7 +10,7 @@ Run the below command
 Source setup/setup.sh
 ```
 
-In Order to use the package, run
+In order to use the package, run
 ``` 
 pip install -e .
 ```
