@@ -4,13 +4,15 @@ dependencies:
   - pyyaml
   - pytest-cov
   - pip:
+    - scipy
     - numpy
     - pandas
-    - xgboost
+    - matplotlib
+    - seaborn
     - scikit-learn
     - pytest
     - shap
-    - scipy
-    - matplotlib
-    - seaborn
+    - xgboost
+    - keras
+    - tensorflow
 
