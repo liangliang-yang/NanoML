@@ -1,3 +1,7 @@
 model_parameters:
   model_name: 'my model'
   model_version: '0.0'
+
+path:
+  train_path: "Mock_Path/train"
+  test_path: "Mock_Path/test"

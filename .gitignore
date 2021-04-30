@@ -139,3 +139,10 @@ cython_debug/
 
 # vscode
 .vscode/
+
+.DS_Store
+
+# data
+datasets/
+aclImdb/
+logs/
