@@ -48,6 +48,8 @@ del df['categories']
 # 等价于
 df.drop(columns=['categories'], inplace=True)
 
+df.drop_duplicates(subset=['bio', 'center', 'outcome'])
+
 # False : Mark all duplicates as True
 condition = df.duplicated(subset=['A'], keep=False)
 df[condition]
@@ -67,3 +69,12 @@ df['education'].nunique()
 df.dropna(axis=0, how='any', inplace=True)
 
 df['col1'][~df['col1'].isin(df['col2'])]
+
+
+
+df1 = df[df['search'] == 'youtube'].rename(columns={'date': 'date1', 'search':'search1'})
+df2 = df[df['search'] == 'netflix'].rename(columns={'date': 'date2', 'search':'search2'})
+merged = pd.merge(df1, df2, how='inner', on=['user_id'])
+merged['date_diff'] = (merged['date2'] - merged['date1']).dt.days
+df3 = merged[merged['date_diff']==1]
+df3.user_id.nunique()
