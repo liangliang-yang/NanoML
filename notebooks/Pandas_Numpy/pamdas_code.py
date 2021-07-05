@@ -78,3 +78,27 @@ merged = pd.merge(df1, df2, how='inner', on=['user_id'])
 merged['date_diff'] = (merged['date2'] - merged['date1']).dt.days
 df3 = merged[merged['date_diff']==1]
 df3.user_id.nunique()
+
+
+
+# Example
+def p(x):
+    return st.norm.pdf(x, loc=30, scale=10) + st.norm.pdf(x, loc=80, scale=20)
+
+def q(x):
+    return st.norm.pdf(x, loc=50, scale=30)
+
+z = np.arange(-50, 151)
+M = max(p(z) / q(z))
+
+def rejection_sampling(iter=1000):
+    samples = []
+
+    for i in range(iter):
+        xi = np.random.normal(50, 30) # xi ~ q(x)
+        u = np.random.uniform(0, 1)
+
+        if u <= p(xi)/(M*q(xi)):
+            samples.append(xi)
+
+    return np.array(samples)
